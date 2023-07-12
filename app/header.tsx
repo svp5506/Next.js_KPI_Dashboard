@@ -1,12 +1,5 @@
 import { Disclosure } from '@headlessui/react'
-import Stats from './stats'
 
-const user = {
-    name: 'Tom Cook',
-    email: 'tom@example.com',
-    imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-}
 const navigation = [
     { name: 'Dashboard', href: '#', current: true },
     { name: 'Tables', href: '#', current: false },
@@ -21,7 +14,7 @@ export default function Header() {
     return (
         <>
             <div className="min-h-full bg-gray-800">
-                <div className="pb-24">
+                <div>
                     <Disclosure as="nav" className="bg-gray-800">
                         {({ open }) => (
                             <>
@@ -62,18 +55,12 @@ export default function Header() {
                             </>
                         )}
                     </Disclosure>
-                    <header className="py-10">
+                    <header className="py-8">
                         <div className="mx-auto px-6 lg:px-24 sm:px-6.text-center ">
                             <h1 className="text-3xl font-bold tracking-tight text-white">Dashboard</h1>
                         </div>
                     </header>
                 </div>
-
-                <main className="-mt-32 min-h-full">
-                    <div>
-                        <Stats></Stats>
-                    </div>
-                </main>
             </div>
         </>
     )

@@ -1,20 +1,30 @@
-import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/20/solid'
-import { CursorArrowRaysIcon, EnvelopeOpenIcon, UsersIcon } from '@heroicons/react/24/outline'
+import { ArrowDownIcon, ArrowUpIcon, TrophyIcon, CursorArrowRaysIcon, StarIcon, ChatBubbleBottomCenterTextIcon } from '@heroicons/react/20/solid'
+import { UsersIcon } from '@heroicons/react/24/outline'
 
 const stats = [
-    { id: 1, name: 'Total Subscribers', stat: '71,897', icon: UsersIcon, change: '122', changeType: 'increase' },
-    { id: 2, name: 'Avg. Open Rate', stat: '58.16%', icon: EnvelopeOpenIcon, change: '5.4%', changeType: 'increase' },
-    { id: 3, name: 'Avg. Click Rate', stat: '24.57%', icon: CursorArrowRaysIcon, change: '3.2%', changeType: 'decrease' },
+    { id: 1, name: 'Total Subscribers', stat: '71,897', icon: TrophyIcon, change: '122', changeType: 'increase' },
+    { id: 2, name: 'Avg. Open Rate', stat: '58.16%', icon: StarIcon, change: '5.4%', changeType: 'increase' },
+    { id: 3, name: 'Avg. Click Rate', stat: '24.57%', icon: ChatBubbleBottomCenterTextIcon, change: '3.2%', changeType: 'decrease' },
 ]
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
+const date = new Date();
+let monthNumber = date.getMonth()
+let year = date.getFullYear()
+
+var months = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+let monthName = months[monthNumber]
+
 export default function Stats() {
     return (
         <div className='px-24'>
-            <h3 className="text-base font-semibold leading-6 text-white">Last 30 days</h3>
+            <h3 className="text-base font-semibold leading-6 text-white">
+                {monthName} {year}
+            </h3>
 
             <dl className="mt-5 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
                 {stats.map((item) => (
@@ -23,8 +33,8 @@ export default function Stats() {
                         className="relative overflow-hidden rounded-lg bg-gray-900 px-4 pb-0 pt-5 shadow sm:px-6 sm:pt-6"
                     >
                         <dt>
-                            <div className="absolute rounded-md bg-indigo-500 p-3">
-                                <item.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                            <div className="absolute rounded-md bg-indigo-500 p-2">
+                                <item.icon className="h-8 w-8 text-white" aria-hidden="true" />
                             </div>
                             <p className="ml-16 truncate text-sm font-medium text-white">{item.name}</p>
                         </dt>
