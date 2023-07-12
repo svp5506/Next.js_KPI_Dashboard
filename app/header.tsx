@@ -1,6 +1,4 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure } from '@headlessui/react'
 import Stats from './stats'
 
 const user = {
@@ -38,7 +36,7 @@ export default function Header() {
                                                         alt="Your Company"
                                                     />
                                                 </div>
-                                                <div className="hidden md:block">
+                                                <div>
                                                     <div className="ml-10 flex items-baseline space-x-4">
                                                         {navigation.map((item) => (
                                                             <a

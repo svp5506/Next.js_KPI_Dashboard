@@ -5,7 +5,6 @@ const stats = [
     { id: 1, name: 'Total Subscribers', stat: '71,897', icon: UsersIcon, change: '122', changeType: 'increase' },
     { id: 2, name: 'Avg. Open Rate', stat: '58.16%', icon: EnvelopeOpenIcon, change: '5.4%', changeType: 'increase' },
     { id: 3, name: 'Avg. Click Rate', stat: '24.57%', icon: CursorArrowRaysIcon, change: '3.2%', changeType: 'decrease' },
-    { id: 4, name: 'Avg. Click Rate', stat: '24.57%', icon: CursorArrowRaysIcon, change: '3.2%', changeType: 'decrease' },
 ]
 
 function classNames(...classes: string[]) {
@@ -17,7 +16,7 @@ export default function Stats() {
         <div className='px-24'>
             <h3 className="text-base font-semibold leading-6 text-white">Last 30 days</h3>
 
-            <dl className="mt-5 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+            <dl className="mt-5 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
                 {stats.map((item) => (
                     <div
                         key={item.id}
@@ -34,7 +33,7 @@ export default function Stats() {
                             <div
                                 className={classNames(
                                     item.changeType === 'increase' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800',
-                                    'inline-flex items-baseline rounded-full px-2.5 py-0.5 text-sm font-medium md:mt-2 lg:mt-0 ml-auto min-w-fit"'
+                                    'inline-flex items-baseline rounded-full px-2.5 py-0.5 text-sm font-medium md:mt-2 lg:mt-0 ml-auto min-w-fit min-w-fit"'
                                 )}
                             >
                                 {item.changeType === 'increase' ? (
