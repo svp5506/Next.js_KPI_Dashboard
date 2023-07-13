@@ -1,4 +1,3 @@
-"use client";
 import { InformationCircleIcon } from "@heroicons/react/20/solid";
 import { Flex, Title, Icon, TabGroup, TabList, Tab, AreaChart, Text, Color } from "@tremor/react";
 import { useState } from "react";

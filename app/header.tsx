@@ -1,3 +1,4 @@
+"use client";
 import { Disclosure } from '@headlessui/react'
 
 const navigation = [

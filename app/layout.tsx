@@ -1,7 +1,7 @@
-// use client
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Header from './header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full bg-gray-100">
       <body className="h-full">
-        <main>
+        <main className="flex min-h-screen flex-col items-stretch bg-gray-800">
+          <Header></Header>
           {children}
         </main>
       </body>

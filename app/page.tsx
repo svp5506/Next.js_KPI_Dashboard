@@ -6,8 +6,7 @@ import ChartView from './trends';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-stretch bg-gray-800">
-      <Header></Header>
+    <main className=' m'>
       <Stats></Stats>
       <ChartView></ChartView>
     </main>
