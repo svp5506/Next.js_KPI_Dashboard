@@ -13,7 +13,7 @@ function classNames(...classes: string[]) {
 export default function Header() {
     return (
         <>
-            <div className="min-h-full bg-gray-800">
+            <div className="min-h-full">
                 <div>
                     <Disclosure as="nav" className="bg-gray-800">
                         {({ open }) => (
@@ -55,7 +55,7 @@ export default function Header() {
                             </>
                         )}
                     </Disclosure>
-                    <header className="py-8">
+                    <header className="py-4">
                         <div className="mx-auto px-6 lg:px-24 sm:px-6.text-center ">
                             <h1 className="text-3xl font-bold tracking-tight text-white">Dashboard</h1>
                         </div>

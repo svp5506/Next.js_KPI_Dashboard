@@ -2,9 +2,9 @@ import { ArrowDownIcon, ArrowUpIcon, TrophyIcon, CursorArrowRaysIcon, StarIcon, 
 import { UsersIcon } from '@heroicons/react/24/outline'
 
 const stats = [
-    { id: 1, name: 'Total Subscribers', stat: '71,897', icon: TrophyIcon, change: '122', changeType: 'increase' },
-    { id: 2, name: 'Avg. Open Rate', stat: '58.16%', icon: StarIcon, change: '5.4%', changeType: 'increase' },
-    { id: 3, name: 'Avg. Click Rate', stat: '24.57%', icon: ChatBubbleBottomCenterTextIcon, change: '3.2%', changeType: 'decrease' },
+    { id: 1, name: 'App Rank', stat: '#1', icon: TrophyIcon, change: '122', changeType: 'increase' },
+    { id: 2, name: 'Average Rating', stat: '4.70', icon: StarIcon, change: '5.4%', changeType: 'increase' },
+    { id: 3, name: 'Total Reviews', stat: '2,650,391', icon: ChatBubbleBottomCenterTextIcon, change: '3.2%', changeType: 'decrease' },
 ]
 
 function classNames(...classes: string[]) {
@@ -21,7 +21,7 @@ let monthName = months[monthNumber]
 
 export default function Stats() {
     return (
-        <div className='px-24'>
+        <div className='px-24 m-2'>
             <h3 className="text-base font-semibold leading-6 text-white">
                 {monthName} {year}
             </h3>
