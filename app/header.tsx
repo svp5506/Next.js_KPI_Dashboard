@@ -1,5 +1,7 @@
 "use client";
 import { Disclosure } from '@headlessui/react'
+import fryLogo from '../public/fryLogo.png';
+
 
 const navigation = [
     { name: 'Dashboard', href: '#', current: true },
@@ -16,18 +18,18 @@ export default function Header() {
         <>
             <div className="min-h-full">
                 <div>
-                    <Disclosure as="nav" className="bg-gray-800">
+                    <Disclosure as="nav" className="bg-white shadow">
                         {({ open }) => (
                             <>
-                                <div className="mx-auto sm:px-6 lg:px-">
-                                    <div className="border-b border-gray-700">
+                                <div className="border-b">
+                                    <div className="mx-auto sm:px-6">
                                         <div className="flex h-16 items-center justify-between px-4 sm:px-0">
                                             <div className="flex items-center">
                                                 <div className="flex-shrink-0">
                                                     <img
-                                                        className="h-8 w-8"
-                                                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                                                        alt="Your Company"
+                                                        className="h-12 w-12"
+                                                        src={fryLogo.src}
+                                                        alt=""
                                                     />
                                                 </div>
                                                 <div>
@@ -38,8 +40,8 @@ export default function Header() {
                                                                 href={item.href}
                                                                 className={classNames(
                                                                     item.current
-                                                                        ? 'bg-gray-900 text-white'
-                                                                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                                        ? 'bg-blue-950 text-white'
+                                                                        : 'text-gray-700 hover:bg-blue-900 hover:text-white',
                                                                     'rounded-md px-3 py-2 text-sm font-medium'
                                                                 )}
                                                                 aria-current={item.current ? 'page' : undefined}
@@ -58,7 +60,7 @@ export default function Header() {
                     </Disclosure>
                     <header className="py-4">
                         <div className="mx-auto px-6 lg:px-24 sm:px-6.text-center ">
-                            <h1 className="text-3xl font-bold tracking-tight text-white">Dashboard</h1>
+                            <h1 className="text-3xl font-bold tracking-tight text-gray-700">Dashboard</h1>
                         </div>
                     </header>
                 </div>

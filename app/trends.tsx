@@ -1,5 +1,5 @@
 import { InformationCircleIcon } from "@heroicons/react/20/solid";
-import { Flex, Title, Icon, TabGroup, TabList, Tab, AreaChart, Text, Color } from "@tremor/react";
+import { Flex, Title, Icon, TabGroup, TabList, Tab, AreaChart, Text, Color, Card } from "@tremor/react";
 import { useState } from "react";
 
 const usNumberformatter = (number: number, decimals = 0) =>
@@ -20,16 +20,16 @@ const formatters: { [key: string]: any } = {
 const Kpis = {
     Sales: "Sales",
     Profit: "Profit",
-    Customers: "Customers",
+    allApps: "All Apps",
 };
 
-const kpiList = [Kpis.Sales, Kpis.Profit, Kpis.Customers];
+const kpiList = [Kpis.Sales, Kpis.Profit, Kpis.allApps];
 
 export type DailyPerformance = {
     date: string;
     Sales: number;
     Profit: number;
-    Customers: number;
+    allApps: number;
 };
 
 export const performance: DailyPerformance[] = [
@@ -37,25 +37,25 @@ export const performance: DailyPerformance[] = [
         date: "2023-05-01",
         Sales: 900.73,
         Profit: 173,
-        Customers: 73,
+        allApps: 73,
     },
     {
         date: "2023-05-02",
         Sales: 1000.74,
         Profit: 174.6,
-        Customers: 74,
+        allApps: 74,
     },
     {
         date: "2023-05-03",
         Sales: 1100.93,
         Profit: 293.1,
-        Customers: 293,
+        allApps: 293,
     },
     {
         date: "2023-05-04",
         Sales: 1200.9,
         Profit: 290.2,
-        Customers: 29,
+        allApps: 29,
     },
 ];
 
@@ -76,37 +76,39 @@ export default function ChartView() {
 
     return (
         <>
-            <div className="my-12 mx-32 max-sm:mx-auto">
-                <div className="md:flex justify-between">
-                    <div>
-                        <Flex className="space-x-0.5" justifyContent="start" alignItems="center">
-                            <Title> Performance History </Title>
-                            <Icon
-                                icon={InformationCircleIcon}
-                                variant="simple"
-                                tooltip="Shows daily increase or decrease of particular domain"
-                            />
-                        </Flex>
-                        <Text> Daily change per domain </Text>
+            <div className="my-12 mx-auto w-4/5">
+                <Card>
+                    <div className="md:flex justify-between">
+                        <div>
+                            <Flex className="space-x-0.5" justifyContent="start" alignItems="center">
+                                <Title> App Rating History </Title>
+                                <Icon
+                                    icon={InformationCircleIcon}
+                                    variant="simple"
+                                    tooltip="The combined iOS and Android App Rating over time"
+                                />
+                            </Flex>
+                            <Text>Combined for iOS and Android</Text>
+                        </div>
+                        <div>
+                            <TabGroup index={selectedIndex} onIndexChange={setSelectedIndex}>
+                                <TabList color="gray" variant="solid">
+                                    <Tab>Spectrum Criteria</Tab>
+                                    <Tab>Mobile Only</Tab>
+                                    <Tab>All Apps</Tab>
+                                </TabList>
+                            </TabGroup>
+                        </div>
                     </div>
-                    <div>
-                        <TabGroup index={selectedIndex} onIndexChange={setSelectedIndex}>
-                            <TabList color="gray" variant="solid">
-                                <Tab>Sales</Tab>
-                                <Tab>Profit</Tab>
-                                <Tab>Customers</Tab>
-                            </TabList>
-                        </TabGroup>
+                    {/* web */}
+                    <div className="mt-8 hidden sm:block">
+                        <AreaChart {...areaChartArgs} />
                     </div>
-                </div>
-                {/* web */}
-                <div className="mt-8 hidden sm:block">
-                    <AreaChart {...areaChartArgs} />
-                </div>
-                {/* mobile */}
-                <div className="mt-8 sm:hidden">
-                    <AreaChart {...areaChartArgs} startEndOnly={true} showGradient={false} showYAxis={false} />
-                </div>
+                    {/* mobile */}
+                    <div className="mt-8 sm:hidden">
+                        <AreaChart {...areaChartArgs} startEndOnly={true} showGradient={false} showYAxis={false} />
+                    </div>
+                </Card>
             </div>
         </>
     );

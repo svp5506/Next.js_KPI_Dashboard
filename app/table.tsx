@@ -104,7 +104,7 @@ export default function DataTable() {
         selectedNames.includes(salesPerson.name) || selectedNames.length === 0;
 
     return (
-        <div className="my-12 mx-32 max-sm:mx-auto">
+        <div className="my-12 mx-auto w-4/5">
             <Card>
                 <MultiSelect
                     onValueChange={setSelectedNames}

@@ -30,7 +30,7 @@ const categories: {
         {
             title: "App Ranking",
             icon: TrophyIcon,
-            color: "indigo",
+            color: "blue",
             metric: "# 1",
             metricPrev: "# 1",
             delta: "0.0",
@@ -39,7 +39,7 @@ const categories: {
         {
             title: "App Rating",
             icon: StarIcon,
-            color: "indigo",
+            color: "blue",
             metric: "4.7",
             metricPrev: "4.7",
             delta: "0.0",
@@ -48,7 +48,7 @@ const categories: {
         {
             title: "Total Reviews",
             icon: ChatBubbleBottomCenterTextIcon,
-            color: "indigo",
+            color: "blue",
             metric: "2,658,029",
             metricPrev: "2,589,201",
             delta: "5.3%",
@@ -58,8 +58,8 @@ const categories: {
 
 export default function Stats() {
     return (
-        <div className='mx-32 max-sm:mx-auto'>
-            <h3 className="text-base font-semibold leading-6 text-white">
+        <div className='mx-auto w-4/5 my-4'>
+            <h3 className="text-base font-semibold leading-6 text-gray-700">
                 {monthName} {year}
             </h3>
             <Grid numItemsSm={2} numItemsLg={3} className="gap-8">
@@ -70,7 +70,7 @@ export default function Stats() {
                             <BadgeDelta deltaType={item.deltaType}>{item.delta}</BadgeDelta>
                         </Flex>
                         <Flex justifyContent="start" alignItems="baseline" className="truncate space-x-3">
-                            <Icon icon={item.icon} variant="light" size="xl" color={item.color} />
+                            <Icon icon={item.icon} variant="light" size="lg" color={item.color} />
                             <Metric>{item.metric}</Metric>
                             <Text className="truncate">from {item.metricPrev}</Text>
                         </Flex>
