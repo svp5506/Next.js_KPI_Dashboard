@@ -58,11 +58,11 @@ const categories: {
 
 export default function Stats() {
     return (
-        <div>
+        <div className='mx-32'>
             <h3 className="text-base font-semibold leading-6 text-white">
                 {monthName} {year}
             </h3>
-            <Grid numItemsSm={2} numItemsLg={3} className="gap-6">
+            <Grid numItemsSm={2} numItemsLg={3} className="gap-8">
                 {categories.map((item) => (
                     <Card key={item.title}>
                         <Flex alignItems="start">

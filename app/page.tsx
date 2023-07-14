@@ -1,7 +1,7 @@
 "use client";
-import Header from './header';
 import Stats from './stats';
 import ChartView from './trends';
+import DataTable from './table';
 
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
     <main className=' m'>
       <Stats></Stats>
       <ChartView></ChartView>
+      <DataTable></DataTable>
     </main>
   )
 }

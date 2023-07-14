@@ -76,35 +76,37 @@ export default function ChartView() {
 
     return (
         <>
-            <div className="md:flex justify-between">
-                <div>
-                    <Flex className="space-x-0.5" justifyContent="start" alignItems="center">
-                        <Title> Performance History </Title>
-                        <Icon
-                            icon={InformationCircleIcon}
-                            variant="simple"
-                            tooltip="Shows daily increase or decrease of particular domain"
-                        />
-                    </Flex>
-                    <Text> Daily change per domain </Text>
+            <div className="my-12 mx-32">
+                <div className="md:flex justify-between">
+                    <div>
+                        <Flex className="space-x-0.5" justifyContent="start" alignItems="center">
+                            <Title> Performance History </Title>
+                            <Icon
+                                icon={InformationCircleIcon}
+                                variant="simple"
+                                tooltip="Shows daily increase or decrease of particular domain"
+                            />
+                        </Flex>
+                        <Text> Daily change per domain </Text>
+                    </div>
+                    <div>
+                        <TabGroup index={selectedIndex} onIndexChange={setSelectedIndex}>
+                            <TabList color="gray" variant="solid">
+                                <Tab>Sales</Tab>
+                                <Tab>Profit</Tab>
+                                <Tab>Customers</Tab>
+                            </TabList>
+                        </TabGroup>
+                    </div>
                 </div>
-                <div>
-                    <TabGroup index={selectedIndex} onIndexChange={setSelectedIndex}>
-                        <TabList color="gray" variant="solid">
-                            <Tab>Sales</Tab>
-                            <Tab>Profit</Tab>
-                            <Tab>Customers</Tab>
-                        </TabList>
-                    </TabGroup>
+                {/* web */}
+                <div className="mt-8 hidden sm:block">
+                    <AreaChart {...areaChartArgs} />
                 </div>
-            </div>
-            {/* web */}
-            <div className="mt-8 hidden sm:block">
-                <AreaChart {...areaChartArgs} />
-            </div>
-            {/* mobile */}
-            <div className="mt-8 sm:hidden">
-                <AreaChart {...areaChartArgs} startEndOnly={true} showGradient={false} showYAxis={false} />
+                {/* mobile */}
+                <div className="mt-8 sm:hidden">
+                    <AreaChart {...areaChartArgs} startEndOnly={true} showGradient={false} showYAxis={false} />
+                </div>
             </div>
         </>
     );
