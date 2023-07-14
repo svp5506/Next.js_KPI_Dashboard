@@ -58,8 +58,8 @@ const categories: {
 
 export default function Stats() {
     return (
-        <div className='mx-auto w-4/5 my-4'>
-            <h3 className="text-base font-semibold leading-6 text-gray-700">
+        <div className='mx-auto w-4/5'>
+            <h3 className="text-base font-semibold leading-6 text-gray-700 py-4">
                 {monthName} {year}
             </h3>
             <Grid numItemsSm={2} numItemsLg={3} className="gap-8">

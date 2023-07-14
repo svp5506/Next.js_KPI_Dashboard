@@ -58,7 +58,7 @@ export default function Header() {
                             </>
                         )}
                     </Disclosure>
-                    <header className="py-4">
+                    <header className="py-2">
                         <div className="mx-auto px-6 lg:px-24 sm:px-6.text-center ">
                             <h1 className="text-3xl font-bold tracking-tight text-gray-700">Dashboard</h1>
                         </div>
