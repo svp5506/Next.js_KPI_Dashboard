@@ -76,7 +76,7 @@ export default function ChartView() {
 
     return (
         <>
-            <div className="my-12 mx-32">
+            <div className="my-12 mx-32 max-sm:mx-auto">
                 <div className="md:flex justify-between">
                     <div>
                         <Flex className="space-x-0.5" justifyContent="start" alignItems="center">

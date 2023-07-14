@@ -58,7 +58,7 @@ const categories: {
 
 export default function Stats() {
     return (
-        <div className='mx-32'>
+        <div className='mx-32 max-sm:mx-auto'>
             <h3 className="text-base font-semibold leading-6 text-white">
                 {monthName} {year}
             </h3>
