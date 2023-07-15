@@ -7,20 +7,29 @@ import {
   Flex,
   ProgressBar,
   Grid,
+  Color,
 } from "@tremor/react";
 import { InformationCircleIcon, TrophyIcon, StarIcon, ChatBubbleBottomCenterTextIcon } from "@heroicons/react/20/solid";
 
-const categories = [
-  {
-    title: "App Ranking",
-    metric: "#1",
-    target: 10,
-    months: 7,
-    value: 70,
-    icon: TrophyIcon,
-    color: 'blue'
-  },
-];
+const categories: {
+    title: string;
+    metric: string;
+    months: number;
+    icon: any;
+    color: Color;
+    value: number;
+    target: number;
+}[] = [
+        {
+            title: "App Ranking",
+            metric: "#1",
+            target: 10,
+            months: 7,
+            value: 70,
+            icon: TrophyIcon,
+            color: "blue"
+        },
+    ];
 
 export default function Kpis() {
   return (
