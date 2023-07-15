@@ -17,7 +17,8 @@ const categories = [
     target: 10,
     months: 7,
     value: 70,
-    icon: TrophyIcon
+    icon: TrophyIcon,
+    color: 'blue'
   },
 ];
 
