@@ -1,15 +1,15 @@
 "use client";
 import Stats from './stats';
-import ChartView from './trends';
-import DataTable from './table';
+import Kpis from './kpis';
 
 
 export default function Home() {
   return (
-    <main className=' m'>
+    <main>
+      <div className="mx-auto my-10 w-10/12">
+      <Kpis></Kpis>
+      </div>
       <Stats></Stats>
-      <ChartView></ChartView>
-      <DataTable></DataTable>
     </main>
   )
 }
