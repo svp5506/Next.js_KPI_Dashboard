@@ -20,13 +20,13 @@ const categoriesRank: {
   color: Color;
 }[] = [
   {
-    title: "Total Reviews",
-    metric: "2,658,029",
-    target: 3000000,
-    months: 12,
-    value: 88,
-    icon: ChatBubbleBottomCenterTextIcon,
-    color: "green",
+    title: "App Ranking",
+    metric: "#1",
+    target: 10,
+    months: 7,
+    value: 70,
+    icon: TrophyIcon,
+    color: "blue"
   },
   // Add more categories as needed
 ];
