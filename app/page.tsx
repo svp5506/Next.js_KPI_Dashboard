@@ -7,7 +7,7 @@ import Grid from "@tremor/react";
 export default function Home() {
   return (
     <main>
-      <div className="mx-auto my-10 w-10/12">
+      <div className="mx-auto my-12 w-10/12">
         <Kpis></Kpis>
       </div>
       <Stats></Stats>
