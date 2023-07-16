@@ -1,6 +1,6 @@
 "use client";
-import Stats from './stats';
-import { Kpis } from './rank_kpi';
+import RatingKPI from './ratingKPI';
+import RankKPI from './rankKPI';
 import Grid from "@tremor/react";
 
 
@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <main>
       <div className="mx-auto my-12 w-10/12">
-        <Kpis></Kpis>
+        <RankKPI></RankKPI>
       </div>
-      <Stats></Stats>
+      <RatingKPI></RatingKPI>
     </main >
   )
 }
