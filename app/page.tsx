@@ -2,15 +2,15 @@
 import RatingKPI from './ratingKPI';
 import RankKPI from './rankKPI';
 import Grid from "@tremor/react";
+import SectionKPI from './sectionKPI';
 
 
 export default function Home() {
   return (
     <main>
-      <div className="mx-auto my-12 w-10/12">
-        <RankKPI></RankKPI>
+      <div className="mx-auto my-4 w-8/12">
+        <SectionKPI></SectionKPI>
       </div>
-      <RatingKPI></RatingKPI>
     </main >
   )
 }

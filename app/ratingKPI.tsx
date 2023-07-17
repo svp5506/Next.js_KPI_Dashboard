@@ -1,7 +1,4 @@
 import {
-  TrophyIcon,
-  StarIcon,
-  ChatBubbleBottomCenterTextIcon,
   InformationCircleIcon,
 } from "@heroicons/react/20/solid";
 import {
@@ -24,50 +21,30 @@ const colors: { [key: string]: Color } = {
   decrease: "rose",
 };
 
-const categoriesRating: {
-  title: string;
-  metric: string;
-  metricPrev: string;
-  icon: any;
-  color: Color;
-  delta: string;
-  deltaType: DeltaType;
-}[] = [
-  {
-    title: "App Rating",
-    icon: StarIcon,
-    color: "blue",
-    metric: "4.7",
-    metricPrev: "4.7",
-    delta: "0.0",
-    deltaType: "unchanged",
-  },
-  // {
-  //     title: "Total Reviews",
-  //     icon: ChatBubbleBottomCenterTextIcon,
-  //     color: "blue",
-  //     metric: "2,658,029",
-  //     metricPrev: "2,589,201",
-  //     delta: "5.3%",
-  //     deltaType: "moderateIncrease",
-  // },
-];
+export interface CategoriesRatingType {
+    title: string;
+    tooltipText: string;
+    metric: string;
+    metricPrev: string;
+    icon: any;
+    color: Color;
+    delta: string;
+    deltaType: DeltaType;
+  }
 
-export default function RatingKPI() {
+export default function RatingKPI({ categoriesRating }: { categoriesRating: CategoriesRatingType }) {
   return (
-    <div>
-      {categoriesRating.map((item) => (
-        <Card key={item.title}>
+        <Card key={categoriesRating.title} className="bg-white shadow-md" decoration="top" decorationColor="blue">
           <Flex
             className="space-x-0.5"
             justifyContent="start"
             alignItems="center"
           >
-            <Title> App Ranking </Title>
+            <Title>{categoriesRating.title}</Title>
             <Icon
               icon={InformationCircleIcon}
               variant="simple"
-              tooltip="The combined iOS and Android App Rating over time"
+              tooltip={categoriesRating.tooltipText}
             />
           </Flex>
           <Flex
@@ -76,23 +53,19 @@ export default function RatingKPI() {
             className="truncate space-x-3 mt-2"
           >
             <Icon
-              icon={item.icon}
+              icon={categoriesRating.icon}
               variant="shadow"
               size="lg"
-              color={item.color}
+              color={categoriesRating.color}
             />
-            <Metric className="my-auto">{item.metric}</Metric>
-            <Text className="truncate">from {item.metricPrev}</Text>
+            <Metric className="my-auto">{categoriesRating.metric}</Metric>
+            <Text className="truncate">from {categoriesRating.metricPrev}</Text>
           </Flex>
-          <Flex justifyContent="start" className="space-x-2 mt-4">
-            <BadgeDelta deltaType={item.deltaType} />
-            <Flex justifyContent="start" className="space-x-1 truncate">
-              <Text color={colors[item.deltaType]}>{item.delta}</Text>
+          <Flex justifyContent="end" className="space-x-2 mt-8 truncate">
+            <BadgeDelta deltaType={categoriesRating.deltaType}/>
+              <Text color={colors[categoriesRating.deltaType]}>{categoriesRating.delta}</Text>
               <Text className="truncate">to previous month</Text>
             </Flex>
-          </Flex>
         </Card>
-      ))}
-    </div>
   );
 }

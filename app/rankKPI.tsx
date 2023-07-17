@@ -8,9 +8,9 @@ import {
   ProgressBar,
   Color,
 } from "@tremor/react";
-import { InformationCircleIcon, TrophyIcon, StarIcon, ChatBubbleBottomCenterTextIcon } from "@heroicons/react/20/solid";
+import { InformationCircleIcon} from "@heroicons/react/20/solid";
 
-const categoriesRank: {
+export interface CategoriesRankType {
   title: string;
   metric: string;
   target: number;
@@ -18,46 +18,31 @@ const categoriesRank: {
   value: number;
   icon: any;
   color: Color;
-}[] = [
-  {
-    title: "App Ranking",
-    metric: "#1",
-    target: 10,
-    months: 7,
-    value: 70,
-    icon: TrophyIcon,
-    color: "blue"
-  },
-  // Add more categories as needed
-];
+};
 
-export default function RankKPI() {
+export default function RankKPI({ categoriesRank }: { categoriesRank: CategoriesRankType }) {
   return (
-    <div>
-      {categoriesRank.map((item) => (
-        <Card key={item.title}>
+        <Card key={categoriesRank.title} className="bg-white shadow-md" decoration="top" decorationColor="blue">
           <Flex className="space-x-0.5" justifyContent="start" alignItems="center">
-            <Title>{item.title}</Title>
+            <Title>{categoriesRank.title}</Title>
             <Icon
               icon={InformationCircleIcon}
               variant="simple"
-              tooltip={`The combined iOS and Android App Rating over time for ${item.title}`}
+              tooltip={`The combined iOS and Android App Rating over time for ${categoriesRank.title}`}
             />
           </Flex>
 
           <Flex justifyContent="start" alignItems="baseline" className="truncate space-x-3 mt-2">
-            <Icon icon={item.icon} variant="shadow" size="lg" color={item.color} />
-            <Metric className="my-auto">{item.metric}</Metric>
+            <Icon icon={categoriesRank.icon} variant="shadow" size="lg" color={categoriesRank.color} />
+            <Metric className="my-auto">{categoriesRank.metric}</Metric>
           </Flex>
           <Flex className="mt-4">
-            <Text className="truncate">{`${item.value}% to goal`}</Text>
+            <Text className="truncate">{`${categoriesRank.value}% to goal`}</Text>
             <Text>
-              {item.months} out of {item.target} Months
+              {categoriesRank.months} out of {categoriesRank.target} Months
             </Text>
           </Flex>
-          <ProgressBar value={item.value} className="mt-2" />
+          <ProgressBar value={categoriesRank.value} className="mt-2" />
         </Card>
-      ))}
-    </div>
-  );
+    );
 }
