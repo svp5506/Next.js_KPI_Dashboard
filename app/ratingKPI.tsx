@@ -61,7 +61,7 @@ export default function RatingKPI({ categoriesRating }: { categoriesRating: Cate
             <Metric className="my-auto">{categoriesRating.metric}</Metric>
             <Text className="truncate">from {categoriesRating.metricPrev}</Text>
           </Flex>
-          <Flex justifyContent="end" className="space-x-2 mt-8 truncate">
+          <Flex justifyContent="end" alignItems="center" className="space-x-2 truncate h-1/2">
             <BadgeDelta deltaType={categoriesRating.deltaType}/>
               <Text color={colors[categoriesRating.deltaType]}>{categoriesRating.delta}</Text>
               <Text className="truncate">to previous month</Text>
