@@ -32,7 +32,7 @@ export default function RankKPI({ categoriesRank }: { categoriesRank: Categories
             />
           </Flex>
 
-          <Flex justifyContent="start" alignItems="baseline" className="truncate space-x-3 mt-2">
+          <Flex justifyContent="start" alignItems="baseline" className="truncate space-x-4 mt-2">
             <Icon icon={categoriesRank.icon} variant="shadow" size="lg" color={categoriesRank.color} />
             <Metric className="my-auto">{categoriesRank.metric}</Metric>
           </Flex>

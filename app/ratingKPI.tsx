@@ -50,7 +50,7 @@ export default function RatingKPI({ categoriesRating }: { categoriesRating: Cate
           <Flex
             justifyContent="start"
             alignItems="baseline"
-            className="truncate space-x-3 mt-2"
+            className="truncate space-x-4 mt-2"
           >
             <Icon
               icon={categoriesRating.icon}
