@@ -1,5 +1,5 @@
 "use client";
-import { Grid, Flex } from "@tremor/react";
+import { Grid, Flex, Divider } from "@tremor/react";
 import SectionKPI from './sectionKPI';
 import CombinedTable from "./mainTable";
 

@@ -36,10 +36,10 @@ const combinedTable: CombinedTable[] = [
     {
         rank: 2,
         appName: "My Verizon App",
-        ratingCombined: 4.7,
-        ratingIOS: 4.8,
+        ratingCombined: 4.6,
+        ratingIOS: 4.6,
         ratingAndroid: 4.6,
-        reviewsTotal: 264948204,
+        reviewsTotal: 204341109,
         deltaType: "moderateIncrease",
     },
     {
@@ -52,7 +52,7 @@ const combinedTable: CombinedTable[] = [
         deltaType: "moderateIncrease",
     },
     {
-        rank: 5,
+        rank: 4,
         appName: "Sprint Mobile",
         ratingCombined: 4.7,
         ratingIOS: 4.8,
@@ -61,7 +61,7 @@ const combinedTable: CombinedTable[] = [
         deltaType: "moderateIncrease",
     },
     {
-        rank: 6,
+        rank: 5,
         appName: "MyAT&T",
         ratingCombined: 4.7,
         ratingIOS: 4.8,
@@ -71,17 +71,20 @@ const combinedTable: CombinedTable[] = [
     },
 ];
 
-export default function CombinedTable() {
-    const [selectedNames, setSelectedNames] = useState<string[]>([]);
 
-    const isSalesPersonSelected = (combinedTable: CombinedTable) =>
+export default function CombinedTable() {
+    const defaultApps = ["MyAT&T", "My Spectrum App", "My Verizon App", "T-Mobile"]
+    const [selectedNames, setSelectedNames] = useState<string[]>(defaultApps);
+
+    const isAppSelected = (combinedTable: CombinedTable) =>
         selectedNames.includes(combinedTable.appName) || selectedNames.length === 0;
 
     return (
-        <Card>
+        <Card decorationColor="blue" decoration="top" className="shadow-lg">
             <MultiSelect
                 onValueChange={setSelectedNames}
-                placeholder="Select Salespeople..."
+                placeholder="Select Applications"
+                defaultValue={defaultApps}
                 className="max-w-xs"
             >
                 {combinedTable.map((item) => (
@@ -93,28 +96,28 @@ export default function CombinedTable() {
             <Table className="mt-6">
                 <TableHead>
                     <TableRow>
-                        <TableHeaderCell>App Rank</TableHeaderCell>
-                        <TableHeaderCell className="text-right">App Name</TableHeaderCell>
-                        <TableHeaderCell className="text-right">Combined Rating</TableHeaderCell>
-                        <TableHeaderCell className="text-right">iOS Rating</TableHeaderCell>
-                        <TableHeaderCell className="text-right">Android Rating</TableHeaderCell>
-                        <TableHeaderCell className="text-right">Total Reviews</TableHeaderCell>
-                        <TableHeaderCell className="text-right">MoM</TableHeaderCell>
+                        <TableHeaderCell className="text-center">App Rank</TableHeaderCell>
+                        <TableHeaderCell className="text-center">App Name</TableHeaderCell>
+                        <TableHeaderCell className="text-center">Combined Rating</TableHeaderCell>
+                        <TableHeaderCell className="text-center">iOS Rating</TableHeaderCell>
+                        <TableHeaderCell className="text-center">Android Rating</TableHeaderCell>
+                        <TableHeaderCell className="text-center">Total Reviews</TableHeaderCell>
+                        <TableHeaderCell className="text-center">Rating MoM</TableHeaderCell>
                     </TableRow>
                 </TableHead>
 
                 <TableBody>
                     {combinedTable
-                        .filter((item) => isSalesPersonSelected(item))
+                        .filter((item) => isAppSelected(item))
                         .map((item) => (
                             <TableRow key={item.rank}>
-                                <TableCell>{item.rank}</TableCell>
+                                <TableCell className="text-center">{item.rank}</TableCell>
                                 <TableCell className="text-right">{item.appName}</TableCell>
-                                <TableCell className="text-right">{item.ratingCombined}</TableCell>
-                                <TableCell className="text-right">{item.ratingIOS}</TableCell>
-                                <TableCell className="text-right">{item.ratingAndroid}</TableCell>
-                                <TableCell className="text-right">{item.reviewsTotal}</TableCell>
-                                <TableCell className="text-right">
+                                <TableCell className="text-center">{item.ratingCombined}</TableCell>
+                                <TableCell className="text-center">{item.ratingIOS}</TableCell>
+                                <TableCell className="text-center">{item.ratingAndroid}</TableCell>
+                                <TableCell className="text-center">{item.reviewsTotal}</TableCell>
+                                <TableCell className="text-center">
                                     <BadgeDelta deltaType={item.deltaType} size="xs" />
                                 </TableCell>
                             </TableRow>
