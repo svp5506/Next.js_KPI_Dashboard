@@ -1,16 +1,23 @@
 "use client";
-import RatingKPI from './ratingKPI';
-import RankKPI from './rankKPI';
-import Grid from "@tremor/react";
+import { Grid, Flex } from "@tremor/react";
 import SectionKPI from './sectionKPI';
+import CombinedTable from "./mainTable";
+
 
 
 export default function Home() {
   return (
     <main>
-      <div className="mx-auto my-4 w-8/12">
-        <SectionKPI></SectionKPI>
-      </div>
+      <Flex>
+        <div className="mx-auto my-4 w-9/12">
+          <SectionKPI></SectionKPI>
+        </div>
+      </Flex>
+      <Flex>
+        <div className="mx-auto my-4 w-9/12">
+          <CombinedTable></CombinedTable>
+        </div>
+      </Flex >
     </main >
   )
 }
