@@ -1,7 +1,8 @@
 "use client";
-import { Grid, Flex, Divider } from "@tremor/react";
+import { Flex } from "@tremor/react";
 import SectionKPI from './sectionKPI';
 import CombinedTable from "./mainTable";
+import MainChart from "./mainChart";
 
 
 
@@ -15,9 +16,14 @@ export default function Home() {
       </Flex>
       <Flex>
         <div className="mx-auto my-4 w-9/12">
+          <MainChart></MainChart>
+        </div>
+      </Flex>
+      <Flex>
+        <div className="mx-auto my-4 w-9/12">
           <CombinedTable></CombinedTable>
         </div>
-      </Flex >
+      </Flex>
     </main >
   )
 }

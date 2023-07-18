@@ -112,7 +112,7 @@ export default function CombinedTable() {
                         .map((item) => (
                             <TableRow key={item.rank}>
                                 <TableCell className="text-center">{item.rank}</TableCell>
-                                <TableCell className="text-right">{item.appName}</TableCell>
+                                <TableCell className="text-center">{item.appName}</TableCell>
                                 <TableCell className="text-center">{item.ratingCombined}</TableCell>
                                 <TableCell className="text-center">{item.ratingIOS}</TableCell>
                                 <TableCell className="text-center">{item.ratingAndroid}</TableCell>
