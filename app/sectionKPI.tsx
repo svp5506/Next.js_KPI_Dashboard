@@ -21,7 +21,9 @@ const CategoriesRating: CategoriesRatingType[] = [
     metricPrev: "4.7",
     delta: "0.0",
     deltaType: "unchanged",
-    tooltipText: "Combined App Rating between MSA iOS and Android"
+    tooltipText: "Combined App Rating between MSA iOS and Android",
+    value: 94,
+    scale: "",
   },
   {
     title: "MSA CSAT",
@@ -31,7 +33,9 @@ const CategoriesRating: CategoriesRatingType[] = [
     metricPrev: "48.7",
     delta: "5.3%",
     deltaType: "moderateIncrease",
-    tooltipText: "MSA iOS and Android combined Customer Satisfaction Score (CSAT)"
+    tooltipText: "MSA iOS and Android combined Customer Satisfaction Score (CSAT)",
+    value: 50.2,
+    scale: "CSAT",
   },
 ];
 
@@ -50,14 +54,14 @@ const CategoriesRank: CategoriesRankType[] = [
 export default function SectionKPI() {
   return (
     <div>
-    <h3 className="text-base font-semibold leading-6 text-gray-700 py-4">
-                {monthName} {year}
-    </h3>
-    <Grid numItemsSm={2} numItemsLg={3} className="gap-6">
-    <RankKPI categoriesRank={CategoriesRank[0]}></RankKPI>
-    <RatingKPI categoriesRating={CategoriesRating[0]}/>
-    <RatingKPI categoriesRating={CategoriesRating[1]}/>
-    </Grid>
+      <h3 className="text-base font-semibold leading-6 text-gray-700 py-4">
+        {monthName} {year}
+      </h3>
+      <Grid numItemsSm={1} numItemsMd={2} numItemsLg={3} className="gap-6">
+        <RankKPI categoriesRank={CategoriesRank[0]}></RankKPI>
+        <RatingKPI categoriesRating={CategoriesRating[0]} />
+        <RatingKPI categoriesRating={CategoriesRating[1]} />
+      </Grid>
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <Flex>
-        <div className="mx-auto my-4 w-9/12">
+        <div className="mx-auto my-4 w-10/12">
           <SectionKPI></SectionKPI>
         </div>
       </Flex>

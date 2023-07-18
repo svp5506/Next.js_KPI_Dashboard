@@ -11,6 +11,7 @@ import {
   DeltaType,
   Color,
   Icon,
+  CategoryBar,
 } from "@tremor/react";
 
 const colors: { [key: string]: Color } = {
@@ -30,6 +31,8 @@ export interface CategoriesRatingType {
   color: Color;
   delta: string;
   deltaType: DeltaType;
+  value: number;
+  scale: string;
 }
 
 export default function RatingKPI({ categoriesRating }: { categoriesRating: CategoriesRatingType }) {
@@ -46,6 +49,8 @@ export default function RatingKPI({ categoriesRating }: { categoriesRating: Cate
           variant="simple"
           tooltip={categoriesRating.tooltipText}
         />
+        <div className="flex-grow" />
+        <BadgeDelta size="lg" deltaType={categoriesRating.deltaType}>{categoriesRating.delta}</BadgeDelta>
       </Flex>
       <Flex
         justifyContent="start"
@@ -59,13 +64,28 @@ export default function RatingKPI({ categoriesRating }: { categoriesRating: Cate
           color={categoriesRating.color}
         />
         <Metric className="my-auto">{categoriesRating.metric}</Metric>
-        <Text className="truncate">from {categoriesRating.metricPrev}</Text>
+        <Text text-align="left" justify-items-start className="truncate">from {categoriesRating.metricPrev}</Text>
       </Flex>
-      <Flex justifyContent="end" alignItems="center" className="space-x-2 truncate h-1/2">
-        <BadgeDelta deltaType={categoriesRating.deltaType} />
-        <Text color={colors[categoriesRating.deltaType]}>{categoriesRating.delta}</Text>
-        <Text className="truncate">to previous month</Text>
-      </Flex>
+      <div className="flex-grow" />
+      {categoriesRating.scale === "CSAT" ? (
+        <CategoryBar
+          values={[20, 20, 30, 30]}
+          colors={["rose", "orange", "yellow", "emerald"]}
+          markerValue={categoriesRating.value}
+          tooltip={categoriesRating.metric}
+          showLabels={false}
+          className="mt-11"
+        />
+      ) : (
+        <CategoryBar
+          values={[40, 40, 10, 10]}
+          colors={["rose", "orange", "yellow", "emerald"]}
+          markerValue={categoriesRating.value}
+          tooltip={categoriesRating.metric}
+          showLabels={false}
+          className="mt-11"
+        />
+      )}
     </Card>
   );
 }
