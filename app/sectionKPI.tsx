@@ -43,9 +43,9 @@ const CategoriesRank: CategoriesRankType[] = [
   {
     title: "MSA App Ranking",
     metric: "#1",
-    target: 10,
-    months: 7,
-    value: 70,
+    target: 12,
+    months: 5,
+    value: 42,
     icon: TrophyIcon,
     color: "blue"
   },
