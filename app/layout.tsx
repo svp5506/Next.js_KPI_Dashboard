@@ -21,6 +21,7 @@ export default function RootLayout({
         <main className="flex h-full min-h-screen flex-col items-stretchb bg-gray-100">
           <Navbar></Navbar>
           {children}
+          <div className="mt-20"></div>
         </main>
       </body>
     </html>

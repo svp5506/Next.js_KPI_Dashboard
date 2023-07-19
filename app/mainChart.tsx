@@ -72,7 +72,7 @@ const valueFormatterMillions = (number: number) => {
 
 export default function MainChart() {
     return (
-        <Card>
+        <Card decoration="top" decorationColor="blue">
             <TabGroup>
                 <div className="block sm:flex sm:justify-between">
                     <div>

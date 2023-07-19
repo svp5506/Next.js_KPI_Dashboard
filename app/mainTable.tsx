@@ -10,8 +10,13 @@ import {
     DeltaType,
     MultiSelect,
     MultiSelectItem,
+    Button,
+    Flex,
+    Title
 } from "@tremor/react";
 import { useState } from "react";
+import { ArrowDownTrayIcon } from "@heroicons/react/20/solid";
+
 
 type CombinedTable = {
     rank: number;
@@ -90,11 +95,15 @@ export default function CombinedTable() {
 
     return (
         <Card decorationColor="blue" decoration="top" className="shadow-lg">
+            <Flex>
+                <Title>Telecom Support App Rankings</Title>
+                <Button icon={ArrowDownTrayIcon}>Export</Button>
+            </Flex>
             <MultiSelect
                 onValueChange={setSelectedNames}
                 placeholder="Select Applications"
                 defaultValue={defaultApps}
-                className="max-w-xs"
+                className="max-w-xs mt-2"
             >
                 {combinedTable.map((item) => (
                     <MultiSelectItem key={item.appName} value={item.appName}>
