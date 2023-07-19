@@ -30,8 +30,8 @@ const combinedTable: CombinedTable[] = [
         ratingCombined: 4.7,
         ratingIOS: 4.8,
         ratingAndroid: 4.6,
-        reviewsTotal: 264948204,
-        deltaType: "moderateIncrease",
+        reviewsTotal: 2649482,
+        deltaType: "increase",
     },
     {
         rank: 2,
@@ -39,7 +39,7 @@ const combinedTable: CombinedTable[] = [
         ratingCombined: 4.6,
         ratingIOS: 4.6,
         ratingAndroid: 4.6,
-        reviewsTotal: 204341109,
+        reviewsTotal: 2043411,
         deltaType: "moderateIncrease",
     },
     {
@@ -48,7 +48,7 @@ const combinedTable: CombinedTable[] = [
         ratingCombined: 4.7,
         ratingIOS: 4.8,
         ratingAndroid: 4.6,
-        reviewsTotal: 264948204,
+        reviewsTotal: 4239412,
         deltaType: "moderateIncrease",
     },
     {
@@ -57,23 +57,32 @@ const combinedTable: CombinedTable[] = [
         ratingCombined: 4.7,
         ratingIOS: 4.8,
         ratingAndroid: 4.6,
-        reviewsTotal: 264948204,
-        deltaType: "moderateIncrease",
+        reviewsTotal: 644820,
+        deltaType: "moderateDecrease",
     },
     {
         rank: 5,
         appName: "MyAT&T",
-        ratingCombined: 4.7,
-        ratingIOS: 4.8,
-        ratingAndroid: 4.6,
-        reviewsTotal: 264948204,
-        deltaType: "moderateIncrease",
+        ratingCombined: 4.0,
+        ratingIOS: 3.8,
+        ratingAndroid: 4.2,
+        reviewsTotal: 94820,
+        deltaType: "decrease",
+    },
+    {
+        rank: 6,
+        appName: "Visible Mobile",
+        ratingCombined: 4.3,
+        ratingIOS: 4.2,
+        ratingAndroid: 4.4,
+        reviewsTotal: 494820,
+        deltaType: "unchanged",
     },
 ];
 
 
 export default function CombinedTable() {
-    const defaultApps = ["MyAT&T", "My Spectrum App", "My Verizon App", "T-Mobile"]
+    const defaultApps = ["MyAT&T", "My Spectrum App", "My Verizon App", "T-Mobile", "Visible Mobile"]
     const [selectedNames, setSelectedNames] = useState<string[]>(defaultApps);
 
     const isAppSelected = (combinedTable: CombinedTable) =>

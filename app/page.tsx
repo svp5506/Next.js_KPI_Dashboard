@@ -15,13 +15,13 @@ export default function Home() {
         </div>
       </Flex>
       <Flex>
-        <div className="mx-auto my-4 w-9/12">
-          <MainChart></MainChart>
+        <div className="mx-auto my-4 w-10/12">
+          <CombinedTable></CombinedTable>
         </div>
       </Flex>
       <Flex>
-        <div className="mx-auto my-4 w-9/12">
-          <CombinedTable></CombinedTable>
+        <div className="mx-auto my-4 w-10/12">
+          <MainChart></MainChart>
         </div>
       </Flex>
     </main >

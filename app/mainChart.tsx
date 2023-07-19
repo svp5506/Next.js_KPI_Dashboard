@@ -11,39 +11,64 @@ import {
 } from "@tremor/react";
 
 const data = {
-    relative: [
+    reviewsTotal: [
         {
-            Date: "01.01.2021",
-            "Customer Churn": 9.73,
+            Date: "Jan 2023",
+            "Total Reviews": 2618182,
         },
         {
-            Date: "02.01.2021",
-            "Customer Churn": 10.74,
+            Date: "Feb 2023",
+            "Total Reviews": 2624582,
         },
-        // ...
         {
-            Date: "13.03.2021",
-            "Customer Churn": 8.82,
+            Date: "Mar 2023",
+            "Total Reviews": 2645189,
+        },
+        {
+            Date: "Apr 2023",
+            "Total Reviews": 2647686,
+        },
+        {
+            Date: "May 2023",
+            "Total Reviews": 2649582,
+        },
+        {
+            Date: "Jun 2023",
+            "Total Reviews": 2647082,
         },
     ],
-    absolute: [
+    reviews5Star: [
         {
-            Date: "01.01.2021",
-            "Customer Churn": 90,
+            Date: "Jan 2023",
+            "5-Star Reviews": 1200000,
         },
-        // ...
         {
-            Date: "13.03.2021",
-            "Customer Churn": 88,
+            Date: "Feb 2023",
+            "5-Star Reviews": 1250040,
+        },
+        {
+            Date: "Mar 2023",
+            "5-Star Reviews": 1454510,
+        },
+        {
+            Date: "Apr 2023",
+            "5-Star Reviews": 1519390,
+        },
+        {
+            Date: "May 2023",
+            "5-Star Reviews": 1470290,
+        },
+        {
+            Date: "Jun 2023",
+            "5-Star Reviews": 1315590,
         },
     ],
 };
 
-const valueFormatterRelative = (number: number) =>
-    `${Intl.NumberFormat("us").format(number).toString()}%`;
-
-const valueFormatterAbsolute = (number: number) =>
-    Intl.NumberFormat("us").format(number).toString();
+const valueFormatterMillions = (number: number) => {
+    const formattedNumber = (number / 1000000).toFixed(2);
+    return formattedNumber + " M";
+};
 
 export default function MainChart() {
     return (
@@ -51,13 +76,13 @@ export default function MainChart() {
             <TabGroup>
                 <div className="block sm:flex sm:justify-between">
                     <div>
-                        <Title>Churn Rate</Title>
-                        <Text>Lost customers per day</Text>
+                        <Title>MSA Reviews</Title>
+                        <Text>Sum of MSA iOS and Android</Text>
                     </div>
                     <div className="mt-4 sm:mt-0">
                         <TabList variant="solid">
-                            <Tab>relative</Tab>
-                            <Tab>absolute</Tab>
+                            <Tab>Total Reviews</Tab>
+                            <Tab>5-Star Reviews</Tab>
                         </TabList>
                     </div>
                 </div>
@@ -65,25 +90,27 @@ export default function MainChart() {
                     <TabPanel>
                         <LineChart
                             className="mt-8 h-80"
-                            data={data.relative}
+                            data={data.reviewsTotal}
                             index="Date"
-                            categories={["Customer Churn"]}
+                            categories={["Total Reviews"]}
                             colors={["blue"]}
                             showLegend={false}
-                            valueFormatter={valueFormatterRelative}
-                            yAxisWidth={40}
+                            valueFormatter={valueFormatterMillions}
+                            yAxisWidth={60}
+                            minValue={2610000}
                         />
                     </TabPanel>
                     <TabPanel>
                         <LineChart
                             className="mt-8 h-80"
-                            data={data.absolute}
+                            data={data.reviews5Star}
                             index="Date"
-                            categories={["Customer Churn"]}
+                            categories={["5-Star Reviews"]}
                             colors={["blue"]}
                             showLegend={false}
-                            valueFormatter={valueFormatterAbsolute}
-                            yAxisWidth={40}
+                            valueFormatter={valueFormatterMillions}
+                            yAxisWidth={60}
+                            minValue={1200000}
                         />
                     </TabPanel>
                 </TabPanels>
