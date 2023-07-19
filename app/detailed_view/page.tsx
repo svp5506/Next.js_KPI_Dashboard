@@ -7,12 +7,12 @@ export default function DetailedView() {
     return (
         <main>
             <Flex>
-                <div className="mx-auto my-4 w-9/12">
+                <div className="mx-auto my-4 w-10/12">
                     <AndroidTable></AndroidTable>
                 </div>
             </Flex>
             <Flex>
-                <div className="mx-auto my-4 w-9/12">
+                <div className="mx-auto my-4 w-10/12">
                     <IOSTable></IOSTable>
                 </div>
             </Flex>
