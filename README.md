@@ -1,7 +1,7 @@
 # App Store KPI Dashboard
 
 
-<div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap; margin-bottom: 16px;">
+<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
     <a href="https://app-kpi-dashboard.vercel.app/" target="_blank" rel="noreferrer">
         <img src="https://img.shields.io/badge/View%20Live-Demo-brightgreen?style=for-the-badge&logo=vercel" alt="View Live Demo"/>
     </a>
@@ -15,6 +15,7 @@
         <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
     </a>
 </div>
+
 [App Store KPI Dashboard](https://app-kpi-dashboard.vercel.app/) is a data visualization dashboard designed to provide actionable analytics on the performance of telecom support applications across major app stores. Built with modern web technologies, this project serves as a portfolio showcase of interactive and highly customizable data visualization for business intelligence.
 
 ---
