@@ -1,7 +1,7 @@
 # App Store KPI Dashboard
 
 
-<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
+<div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px;">
     <a href="https://app-kpi-dashboard.vercel.app/" target="_blank" rel="noreferrer">
         <img src="https://img.shields.io/badge/View%20Live-Demo-brightgreen?style=for-the-badge&logo=vercel" alt="View Live Demo"/>
     </a>
@@ -139,23 +139,6 @@ To set up and run the dashboard locally, follow these steps:
 ---
 
 ## Technologies Used
-
-This project leverages a modern tech stack to deliver a responsive and interactive user experience:
-
-<div style="display: flex; align-items: center; gap: 20px; margin-bottom: 16px; flex-wrap: wrap;">
-  <a href="https://nextjs.org/" target="_blank" rel="noreferrer" title="Next.js">
-    <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/nextjs-icon.svg" alt="Next.js" width="40" height="40"/>
-  </a>
-  <a href="https://www.tremor.so/" target="_blank" rel="noreferrer" title="Tremor">
-    <img src="https://www.tremor.so/images/logo.svg" alt="Tremor" width="40" height="40"/>
-  </a>
-  <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer" title="Tailwind CSS">
-    <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/tailwindcss-icon.svg" alt="Tailwind CSS" width="40" height="40"/>
-  </a>
-  <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer" title="TypeScript">
-    <img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/typescript-icon.svg" alt="TypeScript" width="40" height="40"/>
-  </a>
-  </div>
 
 -   **Next.js**: A powerful React framework for building full-stack web applications. Used here for server-side rendering, static site generation, routing (App Router), and an optimized developer experience.
 -   **Tremor**: A modern UI component library specifically designed for building dashboards with React. It provides pre-built charts, cards, and tables that are easy to integrate and customize.
