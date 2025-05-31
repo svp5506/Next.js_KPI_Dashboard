@@ -33,7 +33,42 @@
 
 The project follows a structure typical for Next.js applications using the App Router:
 
-app/                    # Next.js App Router directory├─ mainChart.tsx         # Component: Line charts for review trends├─ mainTable.tsx         # Component: Combined app performance table├─ sectionKPI.tsx        # Component: KPI summary cards├─ rankKPI.tsx           # Component: App ranking KPI card├─ ratingKPI.tsx         # Component: App rating & CSAT KPI cards├─ navbar.tsx            # Component: Responsive navigation bar├─ detailed_view/        # Route group for detailed views│    ├─ androidTable.tsx # Component: Android-specific app data table│    ├─ iosTable.tsx     # Component: iOS-specific app data table│    └─ page.tsx         # UI for the /detailed_view route├─ documentation/        # Route group for documentation│    ├─ faq.tsx          # Component: FAQ accordion│    └─ page.tsx         # UI for the /documentation route├─ layout.tsx            # Root layout: Applies to all routes, includes global styles and metadata├─ page.tsx              # UI for the homepage (/) route└─ globals.css           # Global styles, including Tailwind CSS base styles and custom CSS
+```
+app/
+
+├─ mainChart.tsx # Line charts for review trends
+
+├─ mainTable.tsx # Combined app performance table
+
+├─ sectionKPI.tsx # KPI summary cards
+
+├─ rankKPI.tsx # App ranking KPI card
+
+├─ ratingKPI.tsx # App rating & CSAT KPI cards
+
+├─ navbar.tsx # Responsive navigation bar
+
+├─ detailed_view/
+
+│ ├─ androidTable.tsx # Android-specific app data
+
+│ ├─ iosTable.tsx # iOS-specific app data
+
+│ └─ page.tsx # Detailed view page
+
+├─ documentation/
+
+│ ├─ faq.tsx # FAQ accordion
+
+│ └─ page.tsx # Documentation page
+
+├─ layout.tsx # Root layout and global styles
+
+├─ page.tsx # Main dashboard page
+
+└─ globals.css # Tailwind and custom styles
+
+```
 ---
 
 ## Customization
@@ -54,8 +89,6 @@ Below are sample images demonstrating the dashboard's interactive data visualiza
 | Homepage                                   | Detailed View                                        | FAQ & Docs                               |
 | :----------------------------------------- | :--------------------------------------------------- | :--------------------------------------- |
 | ![Homepage](screenshots/homepage.png)      | ![Detailed View](screenshots/detailed_view.png)      | ![FAQ & Docs](screenshots/faq.png)       |
-
-*Note: Ensure your `screenshots/` directory is present in your repository with the referenced images.*
 
 ---
 
