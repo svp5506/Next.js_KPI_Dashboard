@@ -1,7 +1,20 @@
 # App Store KPI Dashboard
 
-[![View Live Demo](https://img.shields.io/badge/View%20Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://app-kpi-dashboard.vercel.app/)
 
+<div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap; margin-bottom: 16px;">
+    <a href="https://app-kpi-dashboard.vercel.app/" target="_blank" rel="noreferrer">
+        <img src="https://img.shields.io/badge/View%20Live-Demo-brightgreen?style=for-the-badge&logo=vercel" alt="View Live Demo"/>
+    </a>
+    <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
+        <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"/>
+    </a>
+    <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
+        <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"/>
+    </a>
+    <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
+        <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+    </a>
+</div>
 [App Store KPI Dashboard](https://app-kpi-dashboard.vercel.app/) is a data visualization dashboard designed to provide actionable analytics on the performance of telecom support applications across major app stores. Built with modern web technologies, this project serves as a portfolio showcase of interactive and highly customizable data visualization for business intelligence.
 
 ---
